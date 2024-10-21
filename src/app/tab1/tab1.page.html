@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Pagina de contacto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+<div class="hero">
+    <h1>Bienvenido, Victor</h1>
+    <p>Dejanos tu mensaje para el contacto</p>
+</div>
+<form (ngSubmit)= "submitform()">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input [(ngModel)]="formdata.name" name="name" required=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mail</ion-label>
+    <ion-input type="email" [(ngModel)]="formdata.email" name="email" required=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mensaje</ion-label>
+    <ion-input [(ngModel)]="formdata.message" name="message" required=""></ion-input>
+  </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-button expand="full" type="submit" class="submit-button">
+  Enviar
+</ion-button>
+
+</form>
 </ion-content>
